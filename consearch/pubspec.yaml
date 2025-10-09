@@ -62,6 +62,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/UI/Icons/Arrow Down.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -85,6 +87,41 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+  fonts:
+    - family: Lexend
+      fonts:
+        - asset: assets/Fonts/Lexend/Lexend-Regular.ttf
+        - asset: assets/Fonts/Lexend/Lexend-Thin.ttf
+          weight: 100
+        - asset: assets/Fonts/Lexend/Lexend-Light.ttf
+          weight: 200
+        - asset: assets/Fonts/Lexend/Lexend-Medium.ttf
+          weight: 500
+        - asset: assets/Fonts/Lexend/Lexend-SemiBold.ttf
+          weight: 600
+        - asset: assets/Fonts/Lexend/Lexend-Bold.ttf
+          weight: 700
+        - asset: assets/Fonts/Lexend/Lexend-ExtraBold.ttf
+          weight: 800
+        - asset: assets/Fonts/Lexend/Lexend-Black.ttf
+          weight: 900
+    - family: Lexend Mega
+      fonts:
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-Regular.ttf
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-Thin.ttf
+          weight: 100
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-Light.ttf
+          weight: 200
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-Medium.ttf
+          weight: 500
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-SemiBold.ttf
+          weight: 600
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-Bold.ttf
+          weight: 700
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-ExtraBold.ttf
+          weight: 800
+        - asset: assets/Fonts/Lexend_Mega/LexendMega-Black.ttf
+          weight: 900
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
