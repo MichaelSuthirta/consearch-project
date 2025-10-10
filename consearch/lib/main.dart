@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '/UI/DisplayConstants.dart';
+import '/UI/GradientBackground.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,24 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GradientBackground(
       // appBar: AppBar(
       //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       //   title: Text(widget.title),
       // ),
-      body: Container(
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromRGBO(181, 189, 228, 1),
-                  Color.fromRGBO(251, 227, 213, 1)
-                ]
-            )
-        ),
-        child: Flex(
+      content: Flex(
           direction: Axis.vertical,
           children: [
             const Expanded(
@@ -113,7 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ],
         )
-      )
     );
   }
 }
