@@ -94,7 +94,7 @@ flutter:
         - asset: assets/Fonts/Lexend/Lexend-Thin.ttf
           weight: 100
         - asset: assets/Fonts/Lexend/Lexend-Light.ttf
-          weight: 200
+          weight: 300
         - asset: assets/Fonts/Lexend/Lexend-Medium.ttf
           weight: 500
         - asset: assets/Fonts/Lexend/Lexend-SemiBold.ttf
@@ -111,7 +111,7 @@ flutter:
         - asset: assets/Fonts/Lexend_Mega/LexendMega-Thin.ttf
           weight: 100
         - asset: assets/Fonts/Lexend_Mega/LexendMega-Light.ttf
-          weight: 200
+          weight: 300
         - asset: assets/Fonts/Lexend_Mega/LexendMega-Medium.ttf
           weight: 500
         - asset: assets/Fonts/Lexend_Mega/LexendMega-SemiBold.ttf
@@ -121,6 +121,23 @@ flutter:
         - asset: assets/Fonts/Lexend_Mega/LexendMega-ExtraBold.ttf
           weight: 800
         - asset: assets/Fonts/Lexend_Mega/LexendMega-Black.ttf
+          weight: 900
+    - family: Inter
+      fonts:
+        - asset: assets/Fonts/Inter/Inter-Regular.ttf
+        - asset: assets/Fonts/Inter/Inter-Thin.ttf
+          weight: 100
+        - asset: assets/Fonts/Inter/Inter-Light.ttf
+          weight: 300
+        - asset: assets/Fonts/Inter/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/Fonts/Inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/Fonts/Inter/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/Fonts/Inter/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/Fonts/Inter/Inter-Black.ttf
           weight: 900
   #
   # For details regarding fonts from package dependencies,

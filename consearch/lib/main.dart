@@ -53,13 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return GestureDetector(
       //To detect scroll. When scroll is detected, navigate to next page.
       onVerticalDragEnd: (DragEndDetails details) => navigate(details),
-      onTap: (){
-        Navigator.push(
-            context, MaterialPageRoute(
-              builder: (context) => RegisterPage()
-            )
-        );
-      },
+      // onTap: (){
+      //   Navigator.push(
+      //       context, MaterialPageRoute(
+      //         builder: (context) => RegisterPage()
+      //       )
+      //   );
+      // },
       child: GradientBackground(
           content: Flex(
             direction: Axis.vertical,
