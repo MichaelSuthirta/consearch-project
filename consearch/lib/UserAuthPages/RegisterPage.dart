@@ -1,3 +1,4 @@
+import 'package:consearch/UserAuthPages/LoginPage.dart';
 import 'package:consearch/main.dart';
 import 'package:flutter/material.dart';
 import '/UI/DisplayConstants.dart';
@@ -29,13 +30,13 @@ class _RegisterPageState extends State<RegisterPage>{
   Widget build(BuildContext context){
     double textBoxHeight = 30;
 
-    return GestureDetector(
+    return GestureDetector( //For scroll navigation
       onVerticalDragEnd: (DragEndDetails details) => navigate(details),
-      child: GradientBackground( //Screen background
+      child: GradientBackground( //Screen background uses class in UI folder
         content: Container( //Grey container for Register form
           decoration: BoxDecoration(
             color: DisplayConstants.getGreyFrameColor(),
-            borderRadius: BorderRadius.all(Radius.circular(30)),
+            borderRadius: const BorderRadius.all(Radius.circular(30)),
             boxShadow: [
               BoxShadow(
                 color: const Color.fromRGBO(0, 0, 0, 0.25),
@@ -64,6 +65,7 @@ class _RegisterPageState extends State<RegisterPage>{
                   ),
                 ),
               ),
+              //AuthTextBox class from TextBoxes folder
               AuthTextBox(
                   hintText: "Username",
                   height: textBoxHeight
@@ -79,11 +81,11 @@ class _RegisterPageState extends State<RegisterPage>{
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 4),
                 child: AppButton(
-                  text: "Register",
+                  text: "Create account",
                   onPress: (){},
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 1,
                 color: Colors.black,
               ),
@@ -101,14 +103,19 @@ class _RegisterPageState extends State<RegisterPage>{
                   Container(
                     height: 20,
                     width: 40,
-                    child: TextButton(
+                    child: TextButton( //For clickable Log In text
                         style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
                             visualDensity: VisualDensity.compact,
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap
                         ),
-                        onPressed: (){},
-                        child: Text(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginPage())
+                          );
+                        },
+                        child: const Text(
                           "Log in",
                           style: TextStyle(
                               fontFamily: "Inter",

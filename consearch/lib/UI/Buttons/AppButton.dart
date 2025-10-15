@@ -31,7 +31,7 @@ class AppButton extends StatelessWidget{
           height: height ?? 30,
           decoration: BoxDecoration(
               color: bgColor ?? Color.fromRGBO(119, 134, 191, 1),
-              borderRadius: BorderRadius.circular(20)
+              borderRadius: BorderRadius.circular(20),
           ),
           child: Container(
             alignment: Alignment.center,
