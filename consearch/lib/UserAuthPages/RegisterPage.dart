@@ -29,6 +29,8 @@ class _RegisterPageState extends State<RegisterPage>{
   @override
   Widget build(BuildContext context){
     double textBoxHeight = 30;
+    final TextEditingController controller;
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
     return GestureDetector( //For scroll navigation
       onVerticalDragEnd: (DragEndDetails details) => navigate(details),
@@ -48,8 +50,8 @@ class _RegisterPageState extends State<RegisterPage>{
           ),
           height: 289,
           width: double.maxFinite, //As wide as screen width
-          margin: EdgeInsets.symmetric(horizontal: 40),
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20), //Container padding
+          margin: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20), //Container padding
           child: Column( //Registration form
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -65,24 +67,31 @@ class _RegisterPageState extends State<RegisterPage>{
                   ),
                 ),
               ),
-              //AuthTextBox class from TextBoxes folder
-              AuthTextBox(
-                  hintText: "Username",
-                  height: textBoxHeight
-              ),
-              AuthTextBox(
-                hintText: "Email",
-                height: textBoxHeight
-              ),
-              AuthTextBox(
-                  hintText: "Password",
-                  height: textBoxHeight
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 4),
-                child: AppButton(
-                  text: "Create account",
-                  onPress: (){},
+              Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    //AuthTextBox class from TextBoxes folder
+                    AuthTextBox(
+                        hintText: "Username",
+                        height: textBoxHeight
+                    ),
+                    AuthTextBox(
+                        hintText: "Email",
+                        height: textBoxHeight
+                    ),
+                    AuthTextBox(
+                        hintText: "Password",
+                        height: textBoxHeight
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 4),
+                      child: AppButton(
+                        text: "Create account",
+                        onPress: (){},
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const Divider(

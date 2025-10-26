@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AuthTextBox extends StatefulWidget{
   final String hintText;
   final double height;
+  
   final Color color = const Color.fromRGBO(119, 134, 191, 0.3);
   const AuthTextBox({
     super.key,

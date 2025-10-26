@@ -1,3 +1,4 @@
+import 'package:consearch/SamplePages/SamplePage.dart';
 import 'package:consearch/UI/Buttons/BoxIconButton.dart';
 import 'package:consearch/main.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,15 @@ class _LoginPageState extends State<LoginPage>{
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 4),
                 child: AppButton( //Class from Buttons folder
                   text: "Log In",
-                  onPress: (){},
+                  onPress: (){
+                    //Temporary to check UI element
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SamplePage()
+                      )
+                    );
+                  },
                 ),
               ),
               //Line below the button
@@ -100,7 +109,7 @@ class _LoginPageState extends State<LoginPage>{
                       onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => LoginPage())
+                            MaterialPageRoute(builder: (context) => LoginPage()) //TODO: Change to forgot password function
                         );
                       },
                       child: Text(
