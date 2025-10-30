@@ -68,6 +68,7 @@ flutter:
     - assets/UI/Icons/FB_Icon.png
     - assets/UI/Icons/Google_Icon.png
     - assets/UI/Icons/Music_Note_Line.png
+    - assets/UI/Placeholders/BarcodePlaceholder.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
