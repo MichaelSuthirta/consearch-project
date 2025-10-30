@@ -2,8 +2,8 @@ import 'package:consearch/UI/DisplayConstants.dart';
 import 'package:consearch/UI/TextContainers/TicketPreview.dart';
 import 'package:flutter/material.dart';
 
-class SamplePage extends StatelessWidget{
-  const SamplePage({super.key});
+class SampleTicketPreview extends StatelessWidget{
+  const SampleTicketPreview({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,8 @@
 import 'package:consearch/UI/DisplayConstants.dart';
 import 'package:flutter/material.dart';
 
+import '../Components/BorderedText.dart';
+
 class TicketPreview extends StatelessWidget{
   final String title, performer, date, location;
 
@@ -32,37 +34,9 @@ class TicketPreview extends StatelessWidget{
           //Title
           child: Column(
             children: [
-              Stack(
-                children: [
-                  //Border
-                  Text(
-                    title.toUpperCase(),
-                    style: TextStyle(
-                        fontFamily: "Lexend Mega",
-                        fontSize: 40,
-                        foreground: Paint()
-                          ..style = PaintingStyle.stroke
-                          ..strokeWidth = 2
-                          ..color = Colors.black,
-                    )
-                  ),
-                  //Fill
-                  Text(
-                      title.toUpperCase(),
-                      style: TextStyle(
-                          fontFamily: "Lexend Mega",
-                          fontSize: 40,
-                          color: Colors.white,
-                          shadows: [
-                            Shadow(
-                              color: Colors.black.withOpacity(0.3),
-                              offset: Offset.fromDirection(1.4, 6),
-                              blurRadius: 5
-                            )
-                          ]
-                      )
-                  )
-                ],
+              BorderedText(
+                text: title,
+                fontWeight: FontWeight.w900,
               ),
               //For music note pic
               Flex(

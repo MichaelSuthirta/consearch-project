@@ -15,6 +15,7 @@ class DisplayConstants{
   static final Color textBoxColor = const Color.fromRGBO(196, 200, 217, 1);
   static final Color submitBtnColor = const Color.fromRGBO(119, 134, 191, 1);
   static final Color mainBgColor = const Color.fromRGBO(253, 227, 213, 1);
+  static final Color darkPurpleBg = const Color.fromRGBO(119, 134, 191, 1);
 
   static List<Color> getGradientColor(){
     return gradientBGColor;
@@ -38,5 +39,9 @@ class DisplayConstants{
 
   static Color getMainBgColor(){
     return mainBgColor;
+  }
+
+  static Color getDarkPurpleBg(){
+    return darkPurpleBg;
   }
 }
