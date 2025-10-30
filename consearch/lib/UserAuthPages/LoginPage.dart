@@ -1,4 +1,5 @@
-import 'package:consearch/SamplePages/SamplePage.dart';
+import 'package:consearch/SamplePages/SampleTicketDetails.dart';
+import 'package:consearch/SamplePages/SampleTicketPreview.dart';
 import 'package:consearch/UI/Buttons/BoxIconButton.dart';
 import 'package:consearch/main.dart';
 import 'package:flutter/material.dart';
@@ -85,7 +86,7 @@ class _LoginPageState extends State<LoginPage>{
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => SamplePage()
+                          builder: (context) => SampleTicketDetails()
                       )
                     );
                   },
