@@ -35,6 +35,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  table_calendar: ^3.2.0
+  carousel_slider: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +70,9 @@ flutter:
     - assets/UI/Icons/FB_Icon.png
     - assets/UI/Icons/Google_Icon.png
     - assets/UI/Icons/Music_Note_Line.png
+    - assets/UI/Icons/Bell_Icon.png
+    - assets/UI/Icons/Search_Icon.png
+    - assets/UI/Icons/Location_Icon.png
     - assets/UI/Placeholders/BarcodePlaceholder.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
