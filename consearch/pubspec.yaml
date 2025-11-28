@@ -136,6 +136,9 @@ flutter:
           weight: 800
         - asset: assets/Fonts/Lexend_Mega/LexendMega-Black.ttf
           weight: 900
+    - family: Lexend Deca
+      fonts:
+        - asset: assets/Fonts/Lexend_Deca/LexendDeca-Regular.ttf
     - family: Inter
       fonts:
         - asset: assets/Fonts/Inter/Inter-Regular.ttf

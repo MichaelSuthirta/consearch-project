@@ -119,10 +119,50 @@ class MainMenuPage extends StatelessWidget{
               )
             ),
 
-            Text(
+            const Text(
               "Recommendations",
+              style: TextStyle(
+                fontFamily: "Lexend Deca",
+                fontSize: 12
+              ),
+            ),
 
-            )
+            //Recommendation Carousel
+            //TODO: Refactor into one class (with width and height) after connect to db
+            CarouselSlider(
+                items: [1, 2, 3, 4, 5].map((item){
+                      return Builder(
+                          builder: (BuildContext context){
+                            return Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              alignment: Alignment.center,
+                              margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
+                              width: 80,
+                              child: Text("$item"),
+                            );
+                          }
+                      );
+                    }
+                ).toList(),
+                options: CarouselOptions(
+                    height: 120,
+                    viewportFraction: 0.25,
+                    autoPlay: true
+                )
+            ),
+
+            //For list
+            const Text(
+              "Best Seller",
+              style: TextStyle(
+                  fontFamily: "Lexend Deca",
+                  fontSize: 12
+              ),
+            ),
+
           ],
         )
     );
