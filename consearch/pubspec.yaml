@@ -73,6 +73,10 @@ flutter:
     - assets/UI/Icons/Bell_Icon.png
     - assets/UI/Icons/Search_Icon.png
     - assets/UI/Icons/Location_Icon.png
+    - assets/UI/Icons/Calendar_Icon.png
+    - assets/UI/Icons/Globe_Icon.png
+    - assets/UI/Icons/Monas_Icon.png
+    - assets/UI/Icons/Pensi_Icon.png
     - assets/UI/Placeholders/BarcodePlaceholder.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

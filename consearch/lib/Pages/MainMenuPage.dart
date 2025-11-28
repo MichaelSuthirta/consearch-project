@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:consearch/UI/Buttons/IconTextButton.dart';
 import 'package:consearch/UI/Components/AppSearchBar.dart';
+import 'package:consearch/UI/Components/TwoColumnGrid.dart';
 import 'package:consearch/UI/CreamBackground.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +11,7 @@ class MainMenuPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return CreamBackground(
         content: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
@@ -72,13 +75,53 @@ class MainMenuPage extends StatelessWidget{
             ),
 
             //Grid of buttons
-            GridView(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2
-                ),
-                children: [
+            Container(
+              height: 150,
+              child: TwoColumnsGrid(
+                  widgetList: [
+                      IconTextButton(
+                          iconPath: "assets/UI/Icons/Monas_Icon.png",
+                          onPress: (){
+                            print("Clicked");
+                          },
+                          width: 50,
+                          height: 25,
+                          text: "LOCAL"
+                      ),
+                      IconTextButton(
+                          iconPath: "assets/UI/Icons/Globe_Icon.png",
+                          onPress: (){
+                            print("Clicked");
+                          },
+                          width: 50,
+                          height: 10,
+                            text: "INTERNATIONAL"
+                      ),
+                      IconTextButton(
+                          iconPath: "assets/UI/Icons/Pensi_Icon.png",
+                          onPress: (){
+                            print("Clicked");
+                          },
+                          width: 50,
+                          height: 25,
+                          text: "PENSI"
+                      ),
+                      IconTextButton(
+                          iconPath: "assets/UI/Icons/Calendar_Icon.png",
+                          onPress: (){
+                            print("Clicked");
+                          },
+                          width: 50,
+                          height: 25,
+                          text: "SCHEDULE"
+                      )
+                  ]
+              )
+            ),
 
-                ],
+            Text(
+              "Recommendations",
+
             )
           ],
         )
