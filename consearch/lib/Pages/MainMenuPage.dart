@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
+import 'package:consearch/UI/Components/AppListView.dart';
 import 'package:consearch/UI/Components/AppSearchBar.dart';
 import 'package:consearch/UI/Components/TwoColumnGrid.dart';
 import 'package:consearch/UI/CreamBackground.dart';
@@ -163,6 +164,56 @@ class MainMenuPage extends StatelessWidget{
               ),
             ),
 
+            Expanded(
+              child: AppListView(
+                  widgets: [
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                    Container(
+                      color: Colors.grey,
+                      child: Text("A"),
+                    ),
+                  ]
+              ),
+            )
           ],
         )
     );
