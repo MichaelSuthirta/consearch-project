@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "698678244062",
+    "project_id": "consearch-52394",
+    "storage_bucket": "consearch-52394.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698678244062:android:4f364c96915931fa80c84f",
+        "android_client_info": {
+          "package_name": "com.example.consearch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqgU1kkQv8bB3wiJ3O7PFW-G5akl7SytE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

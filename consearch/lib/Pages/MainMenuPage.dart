@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
+import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:consearch/UI/Components/AppListView.dart';
 import 'package:consearch/UI/Components/AppSearchBar.dart';
 import 'package:consearch/UI/Components/TwoColumnGrid.dart';
@@ -167,49 +168,53 @@ class MainMenuPage extends StatelessWidget{
             Expanded(
               child: AppListView(
                   widgets: [
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Abcd",
+                        imgPath: "",
+                        number: "1",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Efgh",
+                        imgPath: "",
+                        number: "2",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Ijkl",
+                        imgPath: "",
+                        number: "3",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Mnop",
+                        imgPath: "",
+                        number: "4",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Qrst",
+                        imgPath: "",
+                        number: "5",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Uv",
+                        imgPath: "",
+                        number: "6",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Wx",
+                        imgPath: "",
+                        number: "7",
+                        onPress: (){}
                     ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
-                    ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
-                    ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
-                    ),
-                    Container(
-                      color: Colors.grey,
-                      child: Text("A"),
+                    NumberedButton(
+                        text: "Yz",
+                        imgPath: "",
+                        number: "8",
+                        onPress: (){}
                     ),
                   ]
               ),

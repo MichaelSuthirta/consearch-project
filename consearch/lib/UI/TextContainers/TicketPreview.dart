@@ -37,6 +37,7 @@ class TicketPreview extends StatelessWidget{
               BorderedText(
                 text: title,
                 fontWeight: FontWeight.w900,
+                fontFamily: "Lexend Mega",
               ),
               //For music note pic
               Flex(

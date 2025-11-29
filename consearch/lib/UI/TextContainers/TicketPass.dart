@@ -69,6 +69,7 @@ class TicketPass extends StatelessWidget{
                     child: BorderedText(
                       text: concertName,
                       fontWeight: FontWeight.w600,
+                      fontFamily: "Lexend Mega",
                     ),
                   ),
                   Container(
