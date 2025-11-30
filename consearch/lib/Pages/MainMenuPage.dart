@@ -56,18 +56,12 @@ class MainMenuPage extends StatelessWidget{
               ),
             ),
             //Carousel
-            // CarouselSlider(
-            //     items: widgetGenerator.createTopCarouselComp(),
-            //     options: CarouselOptions(
-            //       height: 200,
-            //       autoPlay: true
-            //     )
-            // ),
             ConcertCarousel(isBigCarousel: true),
 
             //Grid of buttons
             Container(
-              height: 150,
+              height: 125,
+              alignment: Alignment.center,
               child: TwoColumnsGrid(
                   widgetList: [
                       IconTextButton(

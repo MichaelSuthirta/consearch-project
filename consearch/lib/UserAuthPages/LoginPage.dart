@@ -7,17 +7,13 @@ import '/UI/GradientBackground.dart';
 import '/UI/TextBoxes/AuthTextBox.dart';
 import '/UI/Buttons/AppButton.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
+
   const LoginPage({super.key});
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage>{
 
   //function to return to start page
-  void navigate(DragEndDetails details){
+  void navigate(DragEndDetails details, BuildContext context){
     if(details.primaryVelocity!.compareTo(0) == 1){
       Navigator.push(
           context,
@@ -31,9 +27,11 @@ class _LoginPageState extends State<LoginPage>{
   @override
   Widget build(BuildContext context){
     double textBoxHeight = 30;
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passController = TextEditingController();
 
     return GestureDetector( //For scroll
-      onVerticalDragEnd: (DragEndDetails details) => navigate(details),
+      onVerticalDragEnd: (DragEndDetails details) => navigate(details, context),
       child: GradientBackground( //Screen background uses class in UI folder
         content: Container( //Grey container for Register form
           decoration: BoxDecoration(
@@ -70,11 +68,13 @@ class _LoginPageState extends State<LoginPage>{
               //AuthTextBox class from TextBoxes button
               AuthTextBox(
                 hintText: "Email",
-                height: textBoxHeight
+                height: textBoxHeight,
+                controller: emailController,
               ),
               AuthTextBox(
-                  hintText: "Password",
-                  height: textBoxHeight
+                hintText: "Password",
+                height: textBoxHeight,
+                controller: passController,
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 4),

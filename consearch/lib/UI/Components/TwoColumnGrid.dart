@@ -14,9 +14,9 @@ class TwoColumnsGrid extends StatelessWidget{
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.height / 7),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10
+          childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.height / 9),
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20
         ),
 
         itemCount: 4,

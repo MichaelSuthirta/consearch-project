@@ -63,15 +63,27 @@ class NumberedButton extends StatelessWidget{
                 margin: EdgeInsets.symmetric(vertical: 9, horizontal: 10),
                 width: 40,
                 height: double.maxFinite,
-                color: Colors.grey,
-                child: Text("Img"),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: Image.network(imgPath).image,
+                      fit: BoxFit.fill
+                  ),
+                )
               ),
-              Text(
-                text.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: "Lexend Mega",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: 250
+                ),
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    text.toUpperCase(),
+                    style: TextStyle(
+                        fontFamily: "Lexend Mega",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15
+                    ),
+                  )
                 ),
               )
             ],

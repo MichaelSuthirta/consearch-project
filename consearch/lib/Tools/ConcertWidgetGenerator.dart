@@ -1,5 +1,6 @@
 import 'package:consearch/Models/Concert.dart';
 import 'package:consearch/Tools/ConcertDataProcessor.dart';
+import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:flutter/material.dart';
 
 class ConcertWidgetGenerator extends ChangeNotifier{
@@ -58,6 +59,47 @@ class ConcertWidgetGenerator extends ChangeNotifier{
       print("Image doesn't exist");
       widgets = [1, 2, 3, 4, 5].map(
           (item) {
+            return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(25)
+                    ),
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
+                    width: double.maxFinite,
+                    child: const CircularProgressIndicator(),
+                  );
+                }
+            );
+          }
+      ).toList();
+    }
+    return widgets;
+  }
+
+  List<Widget> createNumberedListComp(){
+    List<Widget> widgets = List.empty(growable: true);
+
+    if(concertList.isNotEmpty) {
+      print("Image exists");
+
+      for(int i = 0; i < concertList.length; i++){
+        widgets.add(
+          NumberedButton(
+              text: concertList[i].title,
+              imgPath: concertList[i].imageURL,
+              number: (i+1).toString(),
+              onPress: (){}
+          )
+        );
+      }
+    }
+    else {
+      print("Image doesn't exist");
+      widgets = [1, 2, 3, 4, 5].map(
+              (item) {
             return Builder(
                 builder: (BuildContext context) {
                   return Container(

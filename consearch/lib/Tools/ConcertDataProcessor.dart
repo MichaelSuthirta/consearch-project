@@ -52,8 +52,4 @@ class ConcertDataProcessor{
     }
     return concertList;
   }
-
-  // Future<List<Concert>> refetchConcerts() async{
-  //
-  // }
 }

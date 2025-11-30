@@ -6,16 +6,10 @@ import '/UI/GradientBackground.dart';
 import '/UI/TextBoxes/AuthTextBox.dart';
 import '/UI/Buttons/AppButton.dart';
 
-class RegisterPage extends StatefulWidget {
+class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
 
-  @override
-  State<RegisterPage> createState() => _RegisterPageState();
-}
-
-class _RegisterPageState extends State<RegisterPage>{
-
-  void navigate(DragEndDetails details){
+  void navigate(DragEndDetails details, BuildContext context){
     if(details.primaryVelocity!.compareTo(0) == 1){
       Navigator.push(
           context,
@@ -29,11 +23,14 @@ class _RegisterPageState extends State<RegisterPage>{
   @override
   Widget build(BuildContext context){
     double textBoxHeight = 30;
-    final TextEditingController controller;
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passController = TextEditingController();
+
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
     return GestureDetector( //For scroll navigation
-      onVerticalDragEnd: (DragEndDetails details) => navigate(details),
+      onVerticalDragEnd: (DragEndDetails details) => navigate(details, context),
       child: GradientBackground( //Screen background uses class in UI folder
         content: Container( //Grey container for Register form
           decoration: BoxDecoration(
@@ -73,16 +70,19 @@ class _RegisterPageState extends State<RegisterPage>{
                   children: [
                     //AuthTextBox class from TextBoxes folder
                     AuthTextBox(
-                        hintText: "Username",
-                        height: textBoxHeight
+                      hintText: "Username",
+                      height: textBoxHeight,
+                      controller: nameController,
                     ),
                     AuthTextBox(
-                        hintText: "Email",
-                        height: textBoxHeight
+                      hintText: "Email",
+                      height: textBoxHeight,
+                      controller: emailController,
                     ),
                     AuthTextBox(
-                        hintText: "Password",
-                        height: textBoxHeight
+                      hintText: "Password",
+                      height: textBoxHeight,
+                      controller: passController,
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 0, 4),

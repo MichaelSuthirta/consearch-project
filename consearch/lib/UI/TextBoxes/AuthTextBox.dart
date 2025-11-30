@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 
-class AuthTextBox extends StatefulWidget{
+class AuthTextBox extends StatelessWidget{
   final String hintText;
   final double height;
+  final TextEditingController controller;
   
   final Color color = const Color.fromRGBO(119, 134, 191, 0.3);
   const AuthTextBox({
     super.key,
     required this.hintText,
     required this.height,
+    required this.controller,
   });
 
   @override
-  State<AuthTextBox> createState() => _AuthTextBoxState();
-}
-
-class _AuthTextBoxState extends State<AuthTextBox>{
-  @override
   Widget build(BuildContext context){
     return Container(
-      height: widget.height,
+      height: height,
       margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
       child: TextFormField(
         decoration: InputDecoration(
@@ -28,14 +25,16 @@ class _AuthTextBoxState extends State<AuthTextBox>{
                 borderSide: BorderSide.none
             ),
             filled: true,
-            fillColor: widget.color,
-            hintText: widget.hintText,
+            fillColor: color,
+            hintText: hintText,
             hintStyle: const TextStyle(
                 fontFamily: "Inter",
                 fontWeight: FontWeight.w600,
                 fontSize: 12
             )
         ),
+        controller: controller,
+        obscureText: hintText.toLowerCase().compareTo("password") == 0 ? true : false,
       )
     );
   }

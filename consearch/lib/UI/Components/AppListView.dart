@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../Tools/ConcertWidgetGenerator.dart';
+
 class AppListView extends StatelessWidget{
   List<Widget> widgets;
+  ConcertWidgetGenerator widgetGenerator = ConcertWidgetGenerator.getInstance();
 
   AppListView({
     super.key,
@@ -10,13 +13,20 @@ class AppListView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: this.widgets.length,
-      itemBuilder: (BuildContext context, int index){
-        if(index < this.widgets.length){
-          return widgets[index];
+    return ListenableBuilder(
+        listenable: widgetGenerator,
+        builder: (BuildContext context, Widget? child){
+          widgets = widgetGenerator.createNumberedListComp();
+
+          return ListView.builder(
+              itemCount: this.widgets.length,
+              itemBuilder: (BuildContext context, int index){
+                if(index < this.widgets.length){
+                  return widgets[index];
+                }
+              }
+          );
         }
-      }
     );
   }
 }
