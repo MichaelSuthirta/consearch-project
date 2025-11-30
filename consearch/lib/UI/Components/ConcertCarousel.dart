@@ -22,7 +22,7 @@ class ConcertCarousel extends StatelessWidget{
           return CarouselSlider(
               items: widgets,
               options: CarouselOptions(
-                  height: isBigCarousel ? 200 : 120,
+                  height: isBigCarousel ? 175 : 120,
                   viewportFraction: isBigCarousel ? 0.8 : 0.25,
                   autoPlay: true
               )

@@ -60,7 +60,7 @@ class MainMenuPage extends StatelessWidget{
 
             //Grid of buttons
             Container(
-              height: 125,
+              height: 110,
               alignment: Alignment.center,
               child: TwoColumnsGrid(
                   widgetList: [
