@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:consearch/DatabaseConnectors/ConcertDBConnector.dart';
+import 'package:consearch/Tools/ConcertDataProcessor.dart';
+import 'package:consearch/Tools/ConcertWidgetGenerator.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
 import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:consearch/UI/Components/AppListView.dart';
 import 'package:consearch/UI/Components/AppSearchBar.dart';
+import 'package:consearch/UI/Components/ConcertCarousel.dart';
 import 'package:consearch/UI/Components/TwoColumnGrid.dart';
 import 'package:consearch/UI/CreamBackground.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class MainMenuPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    ConcertDBConnector.fetchConcerts();
+    // ConcertWidgetGenerator widgetGenerator = ConcertWidgetGenerator.getInstance();
 
     return CreamBackground(
         content: Column(
@@ -54,30 +56,14 @@ class MainMenuPage extends StatelessWidget{
               ),
             ),
             //Carousel
-            CarouselSlider(
-                items: [1, 2, 3, 4, 5].map(
-                    (item){
-                      return Builder(
-                          builder: (BuildContext context){
-                            return Container(
-                              decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(25)
-                              ),
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
-                              width: double.maxFinite,
-                              child: Text("$item"),
-                            );
-                          }
-                      );
-                    }
-                ).toList(),
-                options: CarouselOptions(
-                  height: 200,
-                  autoPlay: true
-                )
-            ),
+            // CarouselSlider(
+            //     items: widgetGenerator.createTopCarouselComp(),
+            //     options: CarouselOptions(
+            //       height: 200,
+            //       autoPlay: true
+            //     )
+            // ),
+            ConcertCarousel(isBigCarousel: true),
 
             //Grid of buttons
             Container(
@@ -133,31 +119,32 @@ class MainMenuPage extends StatelessWidget{
             ),
 
             //Recommendation Carousel
-            //TODO: Refactor into one class (with width and height) after connect to db
-            CarouselSlider(
-                items: [1, 2, 3, 4, 5].map((item){
-                      return Builder(
-                          builder: (BuildContext context){
-                            return Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.grey,
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
-                              width: 80,
-                              child: Text("$item"),
-                            );
-                          }
-                      );
-                    }
-                ).toList(),
-                options: CarouselOptions(
-                    height: 120,
-                    viewportFraction: 0.25,
-                    autoPlay: true
-                )
-            ),
+            ConcertCarousel(isBigCarousel: false),
+            // //TODO: Refactor into one class (with width and height) after connect to db
+            // CarouselSlider(
+            //     items: [1, 2, 3, 4, 5].map((item){
+            //           return Builder(
+            //               builder: (BuildContext context){
+            //                 return Container(
+            //                   decoration: BoxDecoration(
+            //                       color: Colors.grey,
+            //                       borderRadius: BorderRadius.circular(10)
+            //                   ),
+            //                   alignment: Alignment.center,
+            //                   margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
+            //                   width: 80,
+            //                   child: Text("$item"),
+            //                 );
+            //               }
+            //           );
+            //         }
+            //     ).toList(),
+            //     options: CarouselOptions(
+            //         height: 120,
+            //         viewportFraction: 0.25,
+            //         autoPlay: true
+            //     )
+            // ),
 
             //For list
             const Text(

@@ -1,0 +1,80 @@
+import 'package:consearch/Models/Concert.dart';
+import 'package:consearch/Tools/ConcertDataProcessor.dart';
+import 'package:flutter/material.dart';
+
+class ConcertWidgetGenerator extends ChangeNotifier{
+  static ConcertWidgetGenerator? instance;
+  List<Concert> concertList = List.empty(growable: true);
+
+  ConcertDataProcessor processor = ConcertDataProcessor.getInstance();
+
+  ConcertWidgetGenerator(){
+    getData();
+  }
+
+  static ConcertWidgetGenerator getInstance(){
+    instance ??= ConcertWidgetGenerator();
+    return instance!;
+  }
+
+  void getData() async{
+    print("getData is called");
+    concertList = await processor.getConcerts();
+    notifyListeners();
+    print("Data acquired");
+  }
+
+  List<Widget> createCarouselComp(bool isBigCarousel){
+    List<Widget> widgets;
+
+    double borderRadius =  isBigCarousel ? 25 : 10;
+
+    int maxItem = isBigCarousel ? 5 : 15;
+    
+    if(concertList.isNotEmpty) {
+      print("Image exists");
+      if(concertList.length < maxItem){
+        maxItem = concertList.length;
+      }
+      
+      widgets = concertList.take(maxItem).map(
+              (concert) =>
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    image: DecorationImage(
+                      image: Image.network(concert.imageURL).image,
+                      fit: BoxFit.fill
+                    ),
+                ),
+                alignment: Alignment.center,
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
+                width: double.maxFinite,
+              )
+      ).toList();
+    }
+    else {
+      print("Image doesn't exist");
+      widgets = [1, 2, 3, 4, 5].map(
+          (item) {
+            return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(25)
+                    ),
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
+                    width: double.maxFinite,
+                    child: const CircularProgressIndicator(),
+                  );
+                }
+            );
+          }
+      ).toList();
+    }
+    return widgets;
+  }
+}

@@ -3,15 +3,15 @@ class Concert{
   DateTime startDate, endDate;
   String? artist;
 
-  Concert(
-      this.ID,
-      this.title,
-      this.imageURL,
-      this.location,
-      this.startDate,
-      this.endDate,
-      this.artist
-  );
+  Concert({
+    required this.ID,
+    required this.title,
+    required this.imageURL,
+    required this.location,
+    required this.startDate,
+    required this.endDate,
+    this.artist
+  });
 
 
 }
