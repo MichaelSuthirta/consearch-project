@@ -33,6 +33,8 @@ class NumberedButton extends StatelessWidget{
           decoration: BoxDecoration(
             gradient: RadialGradient(
               colors: gradientColor,
+              radius: 1.5,
+              focal: Alignment.center
             ),
             borderRadius: BorderRadius.circular(15),
               boxShadow: [

@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:consearch/DatabaseConnectors/ConcertDBConnector.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
 import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:consearch/UI/Components/AppListView.dart';
@@ -11,6 +12,8 @@ class MainMenuPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    ConcertDBConnector.fetchConcerts();
+
     return CreamBackground(
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
