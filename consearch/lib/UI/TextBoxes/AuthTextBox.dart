@@ -33,6 +33,7 @@ class AuthTextBox extends StatelessWidget{
                 fontSize: 12
             )
         ),
+        autofocus: true,
         controller: controller,
         obscureText: hintText.toLowerCase().compareTo("password") == 0 ? true : false,
       )

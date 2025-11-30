@@ -1,7 +1,9 @@
 import 'package:consearch/Pages/MainMenuPage.dart';
+import 'package:consearch/Tools/Controllers/UserController.dart';
 import 'package:consearch/UI/Buttons/BoxIconButton.dart';
 import 'package:consearch/main.dart';
 import 'package:flutter/material.dart';
+import '../Models/AppUser.dart';
 import '/UI/DisplayConstants.dart';
 import '/UI/GradientBackground.dart';
 import '/UI/TextBoxes/AuthTextBox.dart';
@@ -29,6 +31,8 @@ class LoginPage extends StatelessWidget {
     double textBoxHeight = 30;
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passController = TextEditingController();
+
+    final UserController userController = UserController();
 
     return GestureDetector( //For scroll
       onVerticalDragEnd: (DragEndDetails details) => navigate(details, context),
@@ -80,15 +84,22 @@ class LoginPage extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 4),
                 child: AppButton( //Class from Buttons folder
                   text: "Log In",
-                  onPress: (){
-                    //Temporary to check UI element
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MainMenuPage()
-                      )
-                    );
-                  },
+                  onPress: () async{
+                    try{
+                      AppUser user = await userController.loginUser(
+                          emailController.text,
+                          passController.text
+                      );
+                      print(user.email);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MainMenuPage())
+                      );
+                    }
+                    catch(e){
+                      print(e);
+                    }
+                  }
                 ),
               ),
               //Line below the button

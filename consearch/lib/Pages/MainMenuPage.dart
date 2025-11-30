@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:consearch/Tools/ConcertDataProcessor.dart';
+import 'package:consearch/Tools/Handlers/ConcertHandler.dart';
 import 'package:consearch/Tools/ConcertWidgetGenerator.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
 import 'package:consearch/UI/Buttons/NumberedButton.dart';

@@ -1,6 +1,8 @@
+import 'package:consearch/Tools/Controllers/UserController.dart';
 import 'package:consearch/UserAuthPages/LoginPage.dart';
 import 'package:consearch/main.dart';
 import 'package:flutter/material.dart';
+import '../Models/AppUser.dart';
 import '/UI/DisplayConstants.dart';
 import '/UI/GradientBackground.dart';
 import '/UI/TextBoxes/AuthTextBox.dart';
@@ -8,6 +10,7 @@ import '/UI/Buttons/AppButton.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
+
 
   void navigate(DragEndDetails details, BuildContext context){
     if(details.primaryVelocity!.compareTo(0) == 1){
@@ -26,6 +29,7 @@ class RegisterPage extends StatelessWidget {
     final TextEditingController nameController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passController = TextEditingController();
+    final UserController userController = UserController();
 
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -88,7 +92,24 @@ class RegisterPage extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(0, 0, 0, 4),
                       child: AppButton(
                         text: "Create account",
-                        onPress: (){},
+                        onPress: () async {
+                          try {
+                            AppUser user = await userController.registerUser(
+                                nameController.text,
+                                emailController.text,
+                                passController.text
+                            );
+                            print(user.email);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) =>
+                                    LoginPage())
+                            );
+                          }
+                          catch (e) {
+                            print(e);
+                          }
+                        }
                       ),
                     ),
                   ],
@@ -119,6 +140,7 @@ class RegisterPage extends StatelessWidget {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap
                         ),
                         onPressed: (){
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => LoginPage())

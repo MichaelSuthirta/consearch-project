@@ -1,19 +1,21 @@
 import 'package:consearch/DatabaseConnectors/ConcertDBConnector.dart';
 import 'package:consearch/Models/Concert.dart';
 
-class ConcertDataProcessor{
-  static  ConcertDataProcessor? instance;
+class ConcertHandler{
+  static  ConcertHandler? instance;
+
+  final ConcertDBConnector db = ConcertDBConnector.getInstance();
 
   late final List<Concert> concertList;
   bool dataIsFetched = false;
 
-  static ConcertDataProcessor getInstance(){
-    instance ??= ConcertDataProcessor();
+  static ConcertHandler getInstance(){
+    instance ??= ConcertHandler();
     return instance!;
   }
 
   Future<List<Concert>> fetchConcertList() async {
-    var data = await ConcertDBConnector.fetchAllConcerts();
+    var data = await db.fetchAllConcerts();
 
     try{
       //Turn data into a list

@@ -1,5 +1,5 @@
 import 'package:consearch/Models/Concert.dart';
-import 'package:consearch/Tools/ConcertDataProcessor.dart';
+import 'package:consearch/Tools/Handlers/ConcertHandler.dart';
 import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ class ConcertWidgetGenerator extends ChangeNotifier{
   static ConcertWidgetGenerator? instance;
   List<Concert> concertList = List.empty(growable: true);
 
-  ConcertDataProcessor processor = ConcertDataProcessor.getInstance();
+  ConcertHandler processor = ConcertHandler.getInstance();
 
   ConcertWidgetGenerator(){
     getData();
