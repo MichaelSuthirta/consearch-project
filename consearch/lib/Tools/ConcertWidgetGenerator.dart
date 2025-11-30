@@ -1,4 +1,5 @@
 import 'package:consearch/Models/Concert.dart';
+import 'package:consearch/Pages/DetailsPage.dart';
 import 'package:consearch/Tools/Handlers/ConcertHandler.dart';
 import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:flutter/material.dart';
@@ -79,11 +80,11 @@ class ConcertWidgetGenerator extends ChangeNotifier{
     return widgets;
   }
 
-  List<Widget> createNumberedListComp(){
+  List<Widget> createNumberedListComp(BuildContext context){
     List<Widget> widgets = List.empty(growable: true);
 
     if(concertList.isNotEmpty) {
-      print("Image exists");
+      print("Creating list");
 
       for(int i = 0; i < concertList.length; i++){
         widgets.add(
@@ -91,13 +92,19 @@ class ConcertWidgetGenerator extends ChangeNotifier{
               text: concertList[i].title,
               imgPath: concertList[i].imageURL,
               number: (i+1).toString(),
-              onPress: (){}
+              onPress: (){
+                Navigator.push(
+                  context, MaterialPageRoute(
+                    builder: (context) => DetailsPage(concert: concertList[i])
+                  )
+                );
+              }
           )
         );
       }
+      print("List created.");
     }
     else {
-      print("Image doesn't exist");
       widgets = [1, 2, 3, 4, 5].map(
               (item) {
             return Builder(

@@ -1,14 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../Tools/ConcertWidgetGenerator.dart';
 
 class AppListView extends StatelessWidget{
-  List<Widget> widgets;
+  BuildContext parentContext;
   ConcertWidgetGenerator widgetGenerator = ConcertWidgetGenerator.getInstance();
 
   AppListView({
     super.key,
-    required this.widgets
+    required this.parentContext
   });
 
   @override
@@ -16,12 +17,12 @@ class AppListView extends StatelessWidget{
     return ListenableBuilder(
         listenable: widgetGenerator,
         builder: (BuildContext context, Widget? child){
-          widgets = widgetGenerator.createNumberedListComp();
+          List<Widget> widgets = widgetGenerator.createNumberedListComp(parentContext);
 
           return ListView.builder(
-              itemCount: this.widgets.length,
+              itemCount: widgets.length,
               itemBuilder: (BuildContext context, int index){
-                if(index < this.widgets.length){
+                if(index < widgets.length){
                   return widgets[index];
                 }
               }

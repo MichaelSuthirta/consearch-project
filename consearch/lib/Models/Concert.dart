@@ -1,5 +1,5 @@
 class Concert{
-  String ID, title, location, imageURL;
+  String ID, title, location, imageURL, desc;
   DateTime startDate, endDate;
   String? artist;
 
@@ -10,6 +10,7 @@ class Concert{
     required this.location,
     required this.startDate,
     required this.endDate,
+    required this.desc,
     this.artist
   });
 
@@ -21,7 +22,8 @@ class Concert{
         location: map["location"],
         startDate: map["startDate"].toDate(),
         endDate: map["endDate"].toDate(),
-        artist: map["artist"] ?? "Guest Stars"
+        artist: map["artist"] ?? "Guest Stars",
+        desc: map["description"]
     );
   }
 

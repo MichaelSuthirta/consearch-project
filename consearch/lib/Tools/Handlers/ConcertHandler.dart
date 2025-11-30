@@ -25,15 +25,7 @@ class ConcertHandler{
             var concertData = concert.data() as Map<String, dynamic>;
 
             //Insert values into object
-            return Concert(
-                ID: concert.id,
-                title: concertData["title"],
-                imageURL: concertData["imageURL"],
-                location: concertData["location"],
-                startDate: concertData["startDate"].toDate(),
-                endDate: concertData["endDate"].toDate(),
-                artist: concertData["artist"] ?? "Guest Stars"
-            );
+            return Concert.create(concert.id, concertData);
           }
       ).toList();
 

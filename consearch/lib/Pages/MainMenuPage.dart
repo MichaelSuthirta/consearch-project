@@ -151,56 +151,7 @@ class MainMenuPage extends StatelessWidget{
 
             Expanded(
               child: AppListView(
-                  widgets: [
-                    NumberedButton(
-                        text: "Abcd",
-                        imgPath: "",
-                        number: "1",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Efgh",
-                        imgPath: "",
-                        number: "2",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Ijkl",
-                        imgPath: "",
-                        number: "3",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Mnop",
-                        imgPath: "",
-                        number: "4",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Qrst",
-                        imgPath: "",
-                        number: "5",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Uv",
-                        imgPath: "",
-                        number: "6",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Wx",
-                        imgPath: "",
-                        number: "7",
-                        onPress: (){}
-                    ),
-                    NumberedButton(
-                        text: "Yz",
-                        imgPath: "",
-                        number: "8",
-                        onPress: (){}
-                    ),
-                  ]
+                parentContext: context,
               ),
             )
           ],
