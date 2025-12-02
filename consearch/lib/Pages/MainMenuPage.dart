@@ -1,10 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:consearch/Pages/ConcertListPage.dart';
-import 'package:consearch/Tools/Handlers/ConcertHandler.dart';
-import 'package:consearch/Tools/ConcertWidgetGenerator.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
-import 'package:consearch/UI/Buttons/NumberedButton.dart';
-import 'package:consearch/UI/Components/AppListView.dart';
 import 'package:consearch/UI/Components/AppSearchBar.dart';
 import 'package:consearch/UI/Components/ConcertCarousel.dart';
 import 'package:consearch/UI/Components/NumberedListView.dart';
@@ -112,12 +107,7 @@ class MainMenuPage extends StatelessWidget{
                       IconTextButton(
                           iconPath: "assets/UI/Icons/Calendar_Icon.png",
                           onPress: (){
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ConcertListPage(category: "-")
-                                )
-                            );
+
                           },
                           width: 50,
                           height: 25,

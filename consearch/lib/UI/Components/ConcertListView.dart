@@ -7,6 +7,6 @@ class ConcertListView extends AppListView{
 
   @override
   List<Widget> getWidgets() {
-    return super.widgetGenerator.createConcertListWidgets(category);
+    return super.widgetGenerator.createConcertListWidgets(category, super.parentContext);
   }
 }

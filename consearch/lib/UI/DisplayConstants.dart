@@ -11,6 +11,11 @@ class DisplayConstants{
     const Color.fromRGBO(171, 184, 231, 1)
   ];
 
+  static final List<Color> creamGradient = [
+    Color.fromRGBO(253, 227, 213, 1),
+    Color.fromRGBO(255, 208, 183, 1)
+  ];
+
   static final Color greyFrameColor = const Color.fromRGBO(228, 228, 228, 1);
   static final Color textBoxColor = const Color.fromRGBO(196, 200, 217, 1);
   static final Color submitBtnColor = const Color.fromRGBO(119, 134, 191, 1);

@@ -128,7 +128,7 @@ class ConcertWidgetGenerator extends ChangeNotifier{
     return widgets;
   }
 
-  List<Widget> createConcertListWidgets(String category){
+  List<Widget> createConcertListWidgets(String category, BuildContext context){
     List<Widget> widgets = List.empty(growable: true);
 
     if(concertList.isNotEmpty) {
@@ -138,10 +138,12 @@ class ConcertWidgetGenerator extends ChangeNotifier{
         if(concertList[i].category.compareTo(category) == 0) {
           widgets.add(
             ConcertContainer(
-                title: concertList[i].title,
-                imagePath: concertList[i].imageURL,
-                location: concertList[i].location,
-                time: concertList[i].startDate.toString()
+              concertID: concertList[i].ID,
+              title: concertList[i].title,
+              imagePath: concertList[i].imageURL,
+              location: concertList[i].location,
+              time: concertList[i].startDate.toString(),
+              parentContext: context,
             )
           );
         }

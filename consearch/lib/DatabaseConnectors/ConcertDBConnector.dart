@@ -1,10 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ConcertDBConnector{
-  static const String COLLECTION_NAME = "concerts";
-  final CollectionReference db = FirebaseFirestore.instance.collection(COLLECTION_NAME);
+  final String COLLECTION_NAME = "concerts";
+  late final CollectionReference db;
 
   static ConcertDBConnector? instance;
+
+  ConcertDBConnector(){
+    db = FirebaseFirestore.instance.collection(COLLECTION_NAME);
+  }
 
   static ConcertDBConnector getInstance(){
     instance ??= ConcertDBConnector();

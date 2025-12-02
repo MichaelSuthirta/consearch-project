@@ -3,11 +3,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:consearch/Models/AppUser.dart';
 
 class UserDBConnector{
-  static const String COLLECTION_NAME = "users";
-  final CollectionReference db = FirebaseFirestore.instance.collection(COLLECTION_NAME);
+  final String COLLECTION_NAME = "users";
+  late final CollectionReference db;
   final authInstance = FirebaseAuth.instance;
 
   static UserDBConnector? instance;
+
+  UserDBConnector(){
+    db = FirebaseFirestore.instance.collection(COLLECTION_NAME);
+  }
 
   static UserDBConnector getInstance(){
     instance ??= UserDBConnector();

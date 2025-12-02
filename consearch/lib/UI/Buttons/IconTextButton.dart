@@ -1,3 +1,4 @@
+import 'package:consearch/UI/DisplayConstants.dart';
 import 'package:flutter/material.dart';
 
 class IconTextButton extends StatelessWidget{
@@ -32,10 +33,7 @@ class IconTextButton extends StatelessWidget{
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                     gradient: RadialGradient(
-                        colors: bgColor ?? [
-                          Color.fromRGBO(253, 227, 213, 1),
-                          Color.fromRGBO(255, 208, 183, 1)
-                        ]
+                        colors: bgColor ?? DisplayConstants.creamGradient
                     ),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
