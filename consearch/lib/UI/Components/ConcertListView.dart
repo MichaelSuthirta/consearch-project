@@ -2,10 +2,11 @@ import 'package:consearch/UI/Components/AppListView.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class ConcertListView extends AppListView{
-  ConcertListView({required super.parentContext});
+  String category;
+  ConcertListView({required super.parentContext, required this.category});
 
   @override
   List<Widget> getWidgets() {
-    return super.widgetGenerator.createConcertListWidgets();
+    return super.widgetGenerator.createConcertListWidgets(category);
   }
 }

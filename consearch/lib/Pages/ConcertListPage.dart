@@ -13,7 +13,27 @@ class ConcertListPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return CreamBackground(
-        content: ConcertListView(parentContext: context)
+        content: Flex(
+          direction: Axis.vertical,
+          children: [
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height / 9,
+              ),
+              child: Container(
+                width: double.maxFinite,
+                color: Colors.grey,
+              ),
+            ),
+            Expanded(
+                child: ConcertListView(
+                  parentContext: context,
+                  category: category,
+                )
+            )
+
+          ],
+        )
     );
   }
 

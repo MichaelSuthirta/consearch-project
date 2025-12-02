@@ -128,21 +128,23 @@ class ConcertWidgetGenerator extends ChangeNotifier{
     return widgets;
   }
 
-  List<Widget> createConcertListWidgets(){
+  List<Widget> createConcertListWidgets(String category){
     List<Widget> widgets = List.empty(growable: true);
 
     if(concertList.isNotEmpty) {
       print("Creating list");
 
       for(int i = 0; i < concertList.length; i++){
-        widgets.add(
+        if(concertList[i].category.compareTo(category) == 0) {
+          widgets.add(
             ConcertContainer(
                 title: concertList[i].title,
                 imagePath: concertList[i].imageURL,
                 location: concertList[i].location,
                 time: concertList[i].startDate.toString()
             )
-        );
+          );
+        }
       }
       print("List created.");
     }

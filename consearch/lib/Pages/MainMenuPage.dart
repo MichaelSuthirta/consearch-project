@@ -73,7 +73,7 @@ class MainMenuPage extends StatelessWidget{
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ConcertListPage(category: "-")
+                                    builder: (context) => ConcertListPage(category: "local")
                                 )
                             );
                           },
@@ -87,7 +87,7 @@ class MainMenuPage extends StatelessWidget{
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ConcertListPage(category: "-")
+                                    builder: (context) => ConcertListPage(category: "international")
                                 )
                             );
                           },
@@ -101,7 +101,7 @@ class MainMenuPage extends StatelessWidget{
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ConcertListPage(category: "-")
+                                    builder: (context) => ConcertListPage(category: "pensi")
                                 )
                             );
                           },

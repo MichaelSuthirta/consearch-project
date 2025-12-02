@@ -18,4 +18,12 @@ class ConcertDBConnector{
 
     return dataResponse.docs;
   }
+
+  // Future<List<QueryDocumentSnapshot<Object?>>> getConcertByCategory(String category) async{
+  //   var dataResponse = await db.where("category", isEqualTo: category.toLowerCase()).get();
+  //
+  //   print("Fetching data");
+  //
+  //   return dataResponse.docs;
+  // }
 }
