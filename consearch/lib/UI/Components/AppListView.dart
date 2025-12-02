@@ -19,15 +19,19 @@ abstract class AppListView extends StatelessWidget{
         builder: (BuildContext context, Widget? child){
 
           List<Widget> widgets = getWidgets();
-
-          return ListView.builder(
-              itemCount: widgets.length,
-              itemBuilder: (BuildContext context, int index){
-                if(index < widgets.length){
-                  return widgets[index];
+          if(widgets.isNotEmpty) {
+            return ListView.builder(
+                itemCount: widgets.length,
+                itemBuilder: (BuildContext context, int index) {
+                  if (index < widgets.length) {
+                    return widgets[index];
+                  }
                 }
-              }
-          );
+            );
+          }
+          else {
+            return const Text("No data");
+          }
         }
     );
   }

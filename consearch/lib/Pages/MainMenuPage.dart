@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:consearch/Pages/ConcertListPage.dart';
 import 'package:consearch/Tools/Handlers/ConcertHandler.dart';
 import 'package:consearch/Tools/ConcertWidgetGenerator.dart';
 import 'package:consearch/UI/Buttons/IconTextButton.dart';
@@ -68,7 +69,12 @@ class MainMenuPage extends StatelessWidget{
                       IconTextButton(
                           iconPath: "assets/UI/Icons/Monas_Icon.png",
                           onPress: (){
-                            print("Clicked");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ConcertListPage(category: "-")
+                                )
+                            );
                           },
                           width: 50,
                           height: 25,
@@ -77,7 +83,12 @@ class MainMenuPage extends StatelessWidget{
                       IconTextButton(
                           iconPath: "assets/UI/Icons/Globe_Icon.png",
                           onPress: (){
-                            print("Clicked");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ConcertListPage(category: "-")
+                                )
+                            );
                           },
                           width: 50,
                           height: 10,
@@ -86,7 +97,12 @@ class MainMenuPage extends StatelessWidget{
                       IconTextButton(
                           iconPath: "assets/UI/Icons/Pensi_Icon.png",
                           onPress: (){
-                            print("Clicked");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ConcertListPage(category: "-")
+                                )
+                            );
                           },
                           width: 50,
                           height: 25,
@@ -95,7 +111,12 @@ class MainMenuPage extends StatelessWidget{
                       IconTextButton(
                           iconPath: "assets/UI/Icons/Calendar_Icon.png",
                           onPress: (){
-                            print("Clicked");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ConcertListPage(category: "-")
+                                )
+                            );
                           },
                           width: 50,
                           height: 25,
@@ -115,32 +136,6 @@ class MainMenuPage extends StatelessWidget{
 
             //Recommendation Carousel
             ConcertCarousel(isBigCarousel: false),
-            // //TODO: Refactor into one class (with width and height) after connect to db
-            // CarouselSlider(
-            //     items: [1, 2, 3, 4, 5].map((item){
-            //           return Builder(
-            //               builder: (BuildContext context){
-            //                 return Container(
-            //                   decoration: BoxDecoration(
-            //                       color: Colors.grey,
-            //                       borderRadius: BorderRadius.circular(10)
-            //                   ),
-            //                   alignment: Alignment.center,
-            //                   margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
-            //                   width: 80,
-            //                   child: Text("$item"),
-            //                 );
-            //               }
-            //           );
-            //         }
-            //     ).toList(),
-            //     options: CarouselOptions(
-            //         height: 120,
-            //         viewportFraction: 0.25,
-            //         autoPlay: true
-            //     )
-            // ),
-
             //For list
             const Text(
               "Best Seller",
