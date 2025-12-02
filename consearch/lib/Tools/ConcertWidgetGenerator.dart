@@ -2,6 +2,7 @@ import 'package:consearch/Models/Concert.dart';
 import 'package:consearch/Pages/DetailsPage.dart';
 import 'package:consearch/Tools/Handlers/ConcertHandler.dart';
 import 'package:consearch/UI/Buttons/NumberedButton.dart';
+import 'package:consearch/UI/TextContainers/ConcertContainer.dart';
 import 'package:flutter/material.dart';
 
 class ConcertWidgetGenerator extends ChangeNotifier{
@@ -100,6 +101,47 @@ class ConcertWidgetGenerator extends ChangeNotifier{
                 );
               }
           )
+        );
+      }
+      print("List created.");
+    }
+    else {
+      widgets = [1, 2, 3, 4, 5].map(
+              (item) {
+            return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(25)
+                    ),
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.fromLTRB(10, 0, 10, 15),
+                    width: double.maxFinite,
+                    child: const CircularProgressIndicator(),
+                  );
+                }
+            );
+          }
+      ).toList();
+    }
+    return widgets;
+  }
+
+  List<Widget> createConcertListWidgets(){
+    List<Widget> widgets = List.empty(growable: true);
+
+    if(concertList.isNotEmpty) {
+      print("Creating list");
+
+      for(int i = 0; i < concertList.length; i++){
+        widgets.add(
+            ConcertContainer(
+                title: concertList[i].title,
+                imagePath: concertList[i].imageURL,
+                location: concertList[i].location,
+                time: concertList[i].startDate.toString()
+            )
         );
       }
       print("List created.");

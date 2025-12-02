@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../Tools/ConcertWidgetGenerator.dart';
 
-class AppListView extends StatelessWidget{
+abstract class AppListView extends StatelessWidget{
   BuildContext parentContext;
   ConcertWidgetGenerator widgetGenerator = ConcertWidgetGenerator.getInstance();
 
@@ -17,7 +17,8 @@ class AppListView extends StatelessWidget{
     return ListenableBuilder(
         listenable: widgetGenerator,
         builder: (BuildContext context, Widget? child){
-          List<Widget> widgets = widgetGenerator.createNumberedListComp(parentContext);
+
+          List<Widget> widgets = getWidgets();
 
           return ListView.builder(
               itemCount: widgets.length,
@@ -30,4 +31,7 @@ class AppListView extends StatelessWidget{
         }
     );
   }
+
+  List<Widget> getWidgets();
+  
 }

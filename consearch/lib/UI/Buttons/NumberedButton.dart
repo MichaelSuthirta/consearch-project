@@ -25,7 +25,7 @@ class NumberedButton extends StatelessWidget{
       splashColor: Colors.white.withOpacity(0.5),
       borderRadius: BorderRadius.circular(15),
       child: Ink(
-        width: double.infinity,
+        width: double.maxFinite,
         height: 90,
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 5),

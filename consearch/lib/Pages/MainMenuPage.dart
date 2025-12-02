@@ -6,6 +6,7 @@ import 'package:consearch/UI/Buttons/NumberedButton.dart';
 import 'package:consearch/UI/Components/AppListView.dart';
 import 'package:consearch/UI/Components/AppSearchBar.dart';
 import 'package:consearch/UI/Components/ConcertCarousel.dart';
+import 'package:consearch/UI/Components/NumberedListView.dart';
 import 'package:consearch/UI/Components/TwoColumnGrid.dart';
 import 'package:consearch/UI/CreamBackground.dart';
 import 'package:flutter/material.dart';
@@ -150,9 +151,9 @@ class MainMenuPage extends StatelessWidget{
             ),
 
             Expanded(
-              child: AppListView(
+              child: NumberedListView(
                 parentContext: context,
-              ),
+              )
             )
           ],
         )
