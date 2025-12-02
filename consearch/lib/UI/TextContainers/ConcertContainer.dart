@@ -18,7 +18,7 @@ class ConcertContainer extends StatelessWidget{
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: DisplayConstants.getTicketGradient(),
+          colors: DisplayConstants.ticketGradient,
         )
       ),
       child: Column(

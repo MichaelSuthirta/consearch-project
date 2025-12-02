@@ -20,11 +20,24 @@ class ConcertListPage extends StatelessWidget{
               constraints: BoxConstraints(
                 maxHeight: MediaQuery.of(context).size.height / 9,
               ),
-              child: Container(
-                width: double.maxFinite,
-                color: Colors.grey,
-              ),
+              child: Flex(
+                direction: Axis.vertical,
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height / 20,
+                    decoration: BoxDecoration(
+                      color:
+                    ),
+                    child: Text(category),
+                  ),
+                  Container(
+                    child: Text("BANDUNG"),
+                  )
+                ],
+              )
             ),
+
+            //List
             Expanded(
                 child: ConcertListView(
                   parentContext: context,

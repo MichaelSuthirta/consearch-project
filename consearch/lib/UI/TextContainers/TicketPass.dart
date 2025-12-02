@@ -29,7 +29,7 @@ class TicketPass extends StatelessWidget{
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: DisplayConstants.getTicketGradient()
+            colors: DisplayConstants.ticketGradient
           ),
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
@@ -82,7 +82,7 @@ class TicketPass extends StatelessWidget{
             //Dark purple box
             Container(
               decoration: BoxDecoration(
-                color: DisplayConstants.getDarkPurpleBg(),
+                color: DisplayConstants.darkPurpleBg,
                 boxShadow: [
                   BoxShadow(
                       color: Colors.black.withOpacity(0.3),

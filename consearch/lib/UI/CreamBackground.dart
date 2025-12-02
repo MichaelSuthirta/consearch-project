@@ -15,7 +15,7 @@ class CreamBackground extends StatelessWidget{
           padding: EdgeInsets.fromLTRB(15, 15, 15, 0),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: DisplayConstants.getMainBgColor()
+              color: DisplayConstants.mainBgColor
           ),
           child: SafeArea(
             child: content,

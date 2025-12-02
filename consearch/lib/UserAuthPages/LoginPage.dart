@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
       child: GradientBackground( //Screen background uses class in UI folder
         content: Container( //Grey container for Register form
           decoration: BoxDecoration(
-            color: DisplayConstants.getGreyFrameColor(),
+            color: DisplayConstants.greyFrameColor,
             borderRadius: const BorderRadius.all(Radius.circular(30)),
             boxShadow: [
               BoxShadow(

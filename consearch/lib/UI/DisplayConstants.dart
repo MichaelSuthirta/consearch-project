@@ -11,37 +11,9 @@ class DisplayConstants{
     const Color.fromRGBO(171, 184, 231, 1)
   ];
 
-  static final Color contentFrameColor = const Color.fromRGBO(228, 228, 228, 1);
+  static final Color greyFrameColor = const Color.fromRGBO(228, 228, 228, 1);
   static final Color textBoxColor = const Color.fromRGBO(196, 200, 217, 1);
   static final Color submitBtnColor = const Color.fromRGBO(119, 134, 191, 1);
   static final Color mainBgColor = const Color.fromRGBO(253, 227, 213, 1);
   static final Color darkPurpleBg = const Color.fromRGBO(119, 134, 191, 1);
-
-  static List<Color> getGradientColor(){
-    return gradientBGColor;
-  }
-
-  static List<Color> getTicketGradient(){
-    return ticketGradient;
-  }
-
-  static Color getGreyFrameColor(){
-    return contentFrameColor;
-  }
-
-  static Color getTextBoxColor(){
-    return textBoxColor;
-  }
-
-  static Color getSubmitBtnColor(){
-    return submitBtnColor;
-  }
-
-  static Color getMainBgColor(){
-    return mainBgColor;
-  }
-
-  static Color getDarkPurpleBg(){
-    return darkPurpleBg;
-  }
 }
