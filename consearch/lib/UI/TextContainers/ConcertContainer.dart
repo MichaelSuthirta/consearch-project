@@ -24,11 +24,7 @@ class ConcertContainer extends StatelessWidget{
       child: Column(
         children: [
           Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: Image.network(imagePath).image
-              ),
-            )
+            child: Image.network(imagePath),
           ),
 
           Text(

@@ -61,6 +61,7 @@ class MainMenuPage extends StatelessWidget{
             ConcertCarousel(isBigCarousel: true),
 
             //Grid of buttons
+            //TODO: Move widgets into WidgetGenerator
             Container(
               height: 110,
               alignment: Alignment.center,
