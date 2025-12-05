@@ -1,7 +1,7 @@
-class Ticket{
+class TicketTransaction{
   String ticketID, userID, concertID, code, barcodeURL;
 
-  Ticket(
+  TicketTransaction(
       this.ticketID,
       this.userID,
       this.concertID,

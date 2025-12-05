@@ -1,18 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:consearch/Models/Ticket.dart';
+import 'package:consearch/Models/TicketTransaction.dart';
 
-class TicketDBConnector{
-  final String COLLECTION_NAME = "tickets";
+class TransactionDBConnector{
+  final String COLLECTION_NAME = "transactions";
   late final CollectionReference db;
 
-  static TicketDBConnector? instance;
+  static TransactionDBConnector? instance;
 
-  TicketDBConnector(){
+  TransactionDBConnector(){
     db = FirebaseFirestore.instance.collection(COLLECTION_NAME);
   }
 
-  static TicketDBConnector getInstance(){
-    instance ??= TicketDBConnector();
+  static TransactionDBConnector getInstance(){
+    instance ??= TransactionDBConnector();
     return instance!;
   }
 
@@ -22,7 +22,7 @@ class TicketDBConnector{
       return response.docs;
   }
 
-  Future<Ticket> createTicket(String userID, String concertID, String code, String barcodeURL) async {
+  Future<TicketTransaction> createTicket(String userID, String concertID, String code, String barcodeURL) async {
     DocumentReference reference = await db.add({
       "userID" : userID,
       "concertID" : concertID,
@@ -30,7 +30,7 @@ class TicketDBConnector{
       "barcodeURL" : barcodeURL
     });
 
-    Ticket newTicket = Ticket(reference.id, userID, concertID, code, barcodeURL);
+    TicketTransaction newTicket = TicketTransaction(reference.id, userID, concertID, code, barcodeURL);
 
     return newTicket;
   }

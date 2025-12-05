@@ -1,4 +1,4 @@
-import 'package:consearch/DatabaseConnectors/TicketDBConnector.dart';
+import 'package:consearch/DatabaseConnectors/TransactionDBConnector.dart';
 import 'package:consearch/Models/Concert.dart';
 import 'package:consearch/Tools/UserManagement/UserManagement.dart';
 import 'package:consearch/UI/Buttons/AppButton.dart';
@@ -117,7 +117,7 @@ class ConcertContainer extends StatelessWidget{
                     child: AppButton(
                       text: "BUY TICKET",
                       onPress: () async{
-                        await TicketDBConnector.getInstance().createTicket(
+                        await TransactionDBConnector.getInstance().createTicket(
                             UserManagement.getInstance().activeUser!.id,
                             concertID,
                             "XXXXXX",
